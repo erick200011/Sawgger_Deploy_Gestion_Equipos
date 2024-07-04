@@ -405,6 +405,9 @@
       "responses":
         "200":
           "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
   "/api/equipos":
     "get":
       "tags":
