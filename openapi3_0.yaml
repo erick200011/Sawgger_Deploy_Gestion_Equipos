@@ -1,0 +1,863 @@
+
+"openapi": "3.0.0"
+"info":
+  "title": "Gestión de Equipos Secretaría del Ambiente"
+  "description": "API para gestionar los equipos de la Secretaría del Ambiente"
+  "version": "1.0.0"
+"servers":
+  -
+    "url": "https://gestion-equiposarea21.onrender.com"
+"paths":
+  "/api/login":
+    "post":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Login Admin"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "bkc79923@doolk.com"
+                "password":
+                  "type": "string"
+                  "example": "NuevaContraseña456"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/usuario/{id}":
+    "put":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Actualizar admin por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 3
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id":
+                  "type": "integer"
+                  "example": 3
+                "nombre":
+                  "type": "string"
+                  "example": "jonathan"
+                "apellido":
+                  "type": "string"
+                  "example": "guamialamag"
+                "email":
+                  "type": "string"
+                  "example": "brh86775@doolk.com"
+                "token":
+                  "type": "string"
+                  "example": null
+                "confirmemail":
+                  "type": "boolean"
+                  "example": true
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuario/actualizarpassword":
+    "put":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Actualizar contraseña de admin"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "passwordactual":
+                  "type": "string"
+                  "example": "PruebaHolaA@1"
+                "passwordnuevo":
+                  "type": "string"
+                  "example": "NuevaContraseña456"
+                "confirmpassword":
+                  "type": "string"
+                  "example": "NuevaContraseña456"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/perfil":
+    "get":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Perfil de administrador"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/nuevo-password/{token}":
+    "post":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Nueva contraseña por token"
+      "parameters":
+        -
+          "in": "path"
+          "name": "token"
+          "required": true
+          "schema":
+            "type": "string"
+          "example": "tvp29eeycq8"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "password":
+                  "type": "string"
+                  "example": "PruebaA@1"
+                "confirmpassword":
+                  "type": "string"
+                  "example": "PruebaA@1"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/recuperar-password":
+    "post":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Recuperar contraseña por correo"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "86775@doolk.com"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/registro":
+    "post":
+      "tags":
+        - "ADMINISTRADOR"
+      "summary": "Crear Administrador"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "nombre":
+                  "type": "string"
+                  "example": "jonathan"
+                "apellido":
+                  "type": "string"
+                  "example": "guamialamag"
+                "email":
+                  "type": "string"
+                  "example": ""
+                "password":
+                  "type": "string"
+                  "example": "pruebaA@1"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/usuarioArea":
+    "get":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Buscar usuarios registrados"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/actualizar/{id}":
+    "put":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Actualizar usuario por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "nombre":
+                  "type": "string"
+                  "example": "jonathan"
+                "apellido":
+                  "type": "string"
+                  "example": "guamialamag"
+                "email":
+                  "type": "string"
+                  "example": "njh18696@vogco.com"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/eliminar/{id}":
+    "delete":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Eliminar usuario por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/{id}":
+    "get":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Buscar usuario por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 21
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/perfil":
+    "get":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Perfil de usuario"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/login":
+    "post":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Login Usuario"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "fcq49081@ilebi.com"
+                "password":
+                  "type": "string"
+                  "example": "pruebA@1"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/usuarioArea/usuario/actualizarpassword":
+    "put":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Actualizar contraseña de usuario"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "passwordactual":
+                  "type": "string"
+                  "example": "PruebaA@1"
+                "passwordnuevo":
+                  "type": "string"
+                  "example": "nuevaA1"
+                "confirmpassword":
+                  "type": "string"
+                  "example": "nuevaA1"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/usuarioArea/nuevo-password/{token}":
+    "post":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Recuperar contraseña por token"
+      "parameters":
+        -
+          "in": "path"
+          "name": "token"
+          "required": true
+          "schema":
+            "type": "string"
+          "example": "0zyol86as5rr"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "password":
+                  "type": "string"
+                  "example": "holaA1"
+                "confirmpassword":
+                  "type": "string"
+                  "example": "holaA1"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/usuarioArea/recuperar-password":
+    "post":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Recuperar contraseña por email"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "qby66324@doolk.com"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/usuarioArea/registro":
+    "post":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Registro de usuario"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "nombre":
+                  "type": "string"
+                  "example": "erick"
+                "apellido":
+                  "type": "string"
+                  "example": "palomo"
+                "email":
+                  "type": "string"
+                  "example": "hsg13912@vogco.com"
+                "area":
+                  "type": "string"
+                  "example": "Área 3"
+      "responses":
+        "200":
+          "description": "OK"
+  "/api/equipos":
+    "get":
+      "tags":
+        - "EQUIPOS"
+      "summary": "Obtener todos los equipos"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "post":
+      "tags":
+        - "EQUIPOS"
+      "summary": "Crear equipo"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "nombre":
+                  "type": "string"
+                  "example": "Equipo 1"
+                "descripcion":
+                  "type": "string"
+                  "example": "Descripción del equipo"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/equipos/{id}":
+    "get":
+      "tags":
+        - "EQUIPOS"
+      "summary": "Obtener equipo por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "put":
+      "tags":
+        - "EQUIPOS"
+      "summary": "Actualizar equipo por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "nombre":
+                  "type": "string"
+                  "example": "Equipo 1 Actualizado"
+                "descripcion":
+                  "type": "string"
+                  "example": "Descripción actualizada del equipo"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "delete":
+      "tags":
+        - "EQUIPOS"
+      "summary": "Eliminar equipo por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/calibracion":
+    "get":
+      "tags":
+        - "CALIBRACION"
+      "summary": "Obtener todas las calibraciones"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "post":
+      "tags":
+        - "CALIBRACION"
+      "summary": "Crear calibración"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_calibracion":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "resultado":
+                  "type": "string"
+                  "example": "Aprobado"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/calibracion/{id}":
+    "get":
+      "tags":
+        - "CALIBRACION"
+      "summary": "Obtener calibración por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "put":
+      "tags":
+        - "CALIBRACION"
+      "summary": "Actualizar calibración por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_calibracion":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "resultado":
+                  "type": "string"
+                  "example": "Aprobado"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "delete":
+      "tags":
+        - "CALIBRACION"
+      "summary": "Eliminar calibración por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/mantenimiento":
+    "get":
+      "tags":
+        - "MANTENIMIENTO"
+      "summary": "Obtener todos los mantenimientos"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "post":
+      "tags":
+        - "MANTENIMIENTO"
+      "summary": "Crear mantenimiento"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_mantenimiento":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "descripcion":
+                  "type": "string"
+                  "example": "Cambio de aceite"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/mantenimiento/{id}":
+    "get":
+      "tags":
+        - "MANTENIMIENTO"
+      "summary": "Obtener mantenimiento por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "put":
+      "tags":
+        - "MANTENIMIENTO"
+      "summary": "Actualizar mantenimiento por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_mantenimiento":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "descripcion":
+                  "type": "string"
+                  "example": "Cambio de aceite"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "delete":
+      "tags":
+        - "MANTENIMIENTO"
+      "summary": "Eliminar mantenimiento por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/verificacion":
+    "get":
+      "tags":
+        - "VERIFICACION"
+      "summary": "Obtener todas las verificaciones"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "post":
+      "tags":
+        - "VERIFICACION"
+      "summary": "Crear verificación"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_verificacion":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "resultado":
+                  "type": "string"
+                  "example": "Aprobado"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+  "/api/verificacion/{id}":
+    "get":
+      "tags":
+        - "VERIFICACION"
+      "summary": "Obtener verificación por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "put":
+      "tags":
+        - "VERIFICACION"
+      "summary": "Actualizar verificación por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "id_equipo":
+                  "type": "integer"
+                  "example": 1
+                "fecha_verificacion":
+                  "type": "string"
+                  "example": "2023-07-01"
+                "resultado":
+                  "type": "string"
+                  "example": "Aprobado"
+                "area":
+                  "type": "string"
+                  "example": "Área 21"
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+    "delete":
+      "tags":
+        - "VERIFICACION"
+      "summary": "Eliminar verificación por ID"
+      "parameters":
+        -
+          "in": "path"
+          "name": "id"
+          "required": true
+          "schema":
+            "type": "integer"
+          "example": 1
+      "responses":
+        "200":
+          "description": "OK"
+      "security":
+        -
+          "bearerAuth": []
+"components":
+  "securitySchemes":
+    "bearerAuth":
+      "type": "http"
+      "scheme": "bearer"
+      "bearerFormat": "JWT"
