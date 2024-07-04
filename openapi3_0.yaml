@@ -513,7 +513,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/calibracion":
+  "/api/calibraciones":
     "get":
       "tags":
         - "CALIBRACION"
@@ -553,7 +553,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/calibracion/{id}":
+  "/api/calibraciones/{id}":
     "get":
       "tags":
         - "CALIBRACION"
@@ -627,7 +627,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/mantenimiento":
+  "/api/mantenimientos":
     "get":
       "tags":
         - "MANTENIMIENTO"
@@ -667,7 +667,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/mantenimiento/{id}":
+  "/api/mantenimientos/{id}":
     "get":
       "tags":
         - "MANTENIMIENTO"
@@ -741,7 +741,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/verificacion":
+  "/api/verificaciones":
     "get":
       "tags":
         - "VERIFICACION"
@@ -781,7 +781,7 @@
       "security":
         -
           "bearerAuth": []
-  "/api/verificacion/{id}":
+  "/api/verificaciones/{id}":
     "get":
       "tags":
         - "VERIFICACION"
