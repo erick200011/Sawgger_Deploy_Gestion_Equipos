@@ -204,23 +204,6 @@
           "description": "Solicitud incorrecta, el token no es válido"
         "404":
           "description": "Token no encontrado"
-    "get":
-      "tags":
-        - "ADMINISTRADOR"
-      "summary": "Confirmar token del Administrador"
-      "parameters":
-        - "name": "token"
-          "in": "path"
-          "required": true
-          "type": "string"
-          "description": "Token de confirmación de usuario (e.g., t6ydabdt6ya)"
-      "responses":
-        "200":
-          "description": "OK"
-        "400":
-          "description": "Solicitud incorrecta, el token no es válido"
-        "404":
-          "description": "Token no encontrado"
   "/api/usuarioArea":
     "get":
       "tags":
@@ -463,22 +446,6 @@
           "description": "Solicitud incorrecta, el token no es válido"
         "404":
           "description": "Token no encontrado"    "get":
-      "tags":
-        - "USUARIOAREAS"
-      "summary": "Confirmar token de usuario área"
-      "parameters":
-        - "name": "token"
-          "in": "path"
-          "required": true
-          "type": "string"
-          "description": "Token de confirmación de usuario área (e.g., t6ydabdt6ya)"
-      "responses":
-        "200":
-          "description": "OK"
-        "400":
-          "description": "Solicitud incorrecta, el token no es válido"
-        "404":
-          "description": "Token no encontrado"
   "/api/equipos":
     "get":
       "tags":
