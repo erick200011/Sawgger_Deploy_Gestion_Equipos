@@ -189,7 +189,7 @@
     "get":
       "tags":
         - "ADMINISTRADOR"
-      "summary": "Confirmar token de usuario"
+      "summary": "Confirmar token de Administrador"
       "parameters":
         - "name": "token"
           "in": "path"
