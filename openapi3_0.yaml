@@ -189,7 +189,7 @@
     "get":
       "tags":
         - "ADMINISTRADOR"
-      "summary": "Confirmar token de usuario"
+      "summary": "Confirmar token del Administrador"
       "parameters":
         - "name": "token"
           "in": "path"
@@ -426,6 +426,24 @@
       "security":
         -
           "bearerAuth": []
+  "/api/usuarioArea/confirmar/{token}":
+    "get":
+      "tags":
+        - "USUARIOAREAS"
+      "summary": "Confirmar token de usuario área"
+      "parameters":
+        - "name": "token"
+          "in": "path"
+          "required": true
+          "type": "string"
+          "description": "Token de confirmación de usuario área (e.g., t6ydabdt6ya)"
+      "responses":
+        "200":
+          "description": "OK"
+        "400":
+          "description": "Solicitud incorrecta, el token no es válido"
+        "404":
+          "description": "Token no encontrado"
   "/api/equipos":
     "get":
       "tags":
