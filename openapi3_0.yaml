@@ -445,7 +445,7 @@
         "400":
           "description": "Solicitud incorrecta, el token no es válido"
         "404":
-          "description": "Token no encontrado"    "get":
+          "description": "Token no encontrado"
   "/api/equipos":
     "get":
       "tags":
