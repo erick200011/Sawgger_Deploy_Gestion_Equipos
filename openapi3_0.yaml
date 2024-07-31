@@ -720,18 +720,24 @@
             "schema":
               "type": "object"
               "properties":
+                "ul_fecha_man_in":
+                  "type": "date"
+                  "example": "2024-10-28"
+                "prox_fecha_man_in":
+                  "type": "date"
+                  "example": "2024-10-28"
+                "ul_fecha_man_ex":
+                  "type": "date"
+                  "example": "2024-10-28"
+                "prox_fecha_man_ex":
+                  "type": "date"
+                  "example": "2024-10-28"
                 "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_mantenimiento":
                   "type": "string"
-                  "example": "2023-07-01"
-                "descripcion":
+                  "example": "B-06-07"
+                "comentario":
                   "type": "string"
-                  "example": "Cambio de aceite"
-                "area":
-                  "type": "string"
-                  "example": "Área 21"
+                  "example": "prueba"
       "responses":
         "200":
           "description": "OK"
@@ -835,17 +841,45 @@
               "type": "object"
               "properties":
                 "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_verificacion":
                   "type": "string"
-                  "example": "2023-07-01"
-                "resultado":
+                  "example": "B-03-07"
+                "ver_interna":
                   "type": "string"
-                  "example": "Aprobado"
-                "area":
+                  "example": "null"
+                "ver_externa":
                   "type": "string"
-                  "example": "Área 21"
+                  "example": "null"
+                "operativo":
+                  "type": "boolean"
+                  "example": "True"
+                "fuera_de_uso":
+                  "type": "boolean"
+                  "example": "False"
+                "dado_de_baja":
+                  "type": "boolean"
+                  "example": "False"
+                "observaciones":
+                  "type": "string"
+                  "example": "null"
+                "estado":
+                  "type": "string"
+                  "example": "EN USO"
+                "elaborado":
+                  "type": "string"
+                  "example": "prueba"
+                "fecha_elab":
+                  "type": "date"
+                  "example": "2022-12-16"
+                "revisado":
+                  "type": "string"
+                  "example": "Erick"
+                "fecha_rev":
+                  "type": "date"
+                  "example": "2022-12-21"
+                "ul_fecha_ac":
+                  "type": "string"
+                  "format":"date"
+                  "example": "2022-12-19"
       "responses":
         "200":
           "description": "OK"
