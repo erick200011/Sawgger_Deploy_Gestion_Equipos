@@ -545,12 +545,36 @@
             "schema":
               "type": "object"
               "properties":
-                "nombre":
+                "idcod":
                   "type": "string"
-                  "example": "Equipo 1 Actualizado"
+                  "example": "A-06-07"
                 "descripcion":
                   "type": "string"
-                  "example": "Descripción actualizada del equipo"
+                  "example": "Descripción del equipo"
+                "marca":
+                  "type": "string"
+                  "example": "marca del equipo"
+                "modelos":
+                  "type": "string"
+                  "example": "modelo del equipo"
+                "nserie":
+                  "type": "string"
+                  "example": "numero de serie del equipo"
+                "accesorios":
+                  "type": "string"
+                  "example": "accesorios del equipo"
+                "fabricante":
+                  "type": "string"
+                  "example": "fabricante del equipo"
+                "caracteristicas":
+                  "type": "string"
+                  "example": "caracteristicas del equipo"
+                "con_instalacion":
+                  "type": "string"
+                  "example": "como instalar el equipo"
+                "con_utilizacion":
+                  "type": "string"
+                  "example": "como utilizar el equipo"
                 "area":
                   "type": "string"
                   "example": "Área 21"
@@ -666,18 +690,28 @@
             "schema":
               "type": "object"
               "properties":
-                "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_calibracion":
+                "ul_fecha_cal_in":
                   "type": "string"
+                  "format": "date"
                   "example": "2023-07-01"
-                "resultado":
+                "prox_fecha_cal_in":
                   "type": "string"
-                  "example": "Aprobado"
-                "area":
+                  "format": "date"
+                  "example": "2023-07-01"
+                "ul_fecha_cal_ex":
                   "type": "string"
-                  "example": "Área 21"
+                  "format": "date"
+                  "example": "2023-07-01"
+                "prox_fecha_cal_ex":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2023-07-01"
+                "idcod_calibracion":
+                  "type": "string"
+                  "example": "B-03-07"
+                "comentarios":
+                  "type": "string"
+                  "example": "este equipo tiene calibración pendiente"
       "responses":
         "200":
           "description": "OK"
@@ -725,16 +759,20 @@
               "type": "object"
               "properties":
                 "ul_fecha_man_in":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2024-10-28"
                 "prox_fecha_man_in":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2024-10-28"
                 "ul_fecha_man_ex":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2024-10-28"
                 "prox_fecha_man_ex":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2024-10-28"
                 "id_equipo":
                   "type": "string"
@@ -786,18 +824,28 @@
             "schema":
               "type": "object"
               "properties":
+                "ul_fecha_man_in":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2024-10-28"
+                "prox_fecha_man_in":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2024-10-28"
+                "ul_fecha_man_ex":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2024-10-28"
+                "prox_fecha_man_ex":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2024-10-28"
                 "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_mantenimiento":
                   "type": "string"
-                  "example": "2023-07-01"
-                "descripcion":
+                  "example": "B-06-07"
+                "comentario":
                   "type": "string"
-                  "example": "Cambio de aceite"
-                "area":
-                  "type": "string"
-                  "example": "Área 21"
+                  "example": "prueba"
       "responses":
         "200":
           "description": "OK"
@@ -845,44 +893,47 @@
               "type": "object"
               "properties":
                 "id_equipo":
-                  "type": "string"
-                  "example": "B-03-07"
-                "ver_interna":
-                  "type": "string"
-                  "example": "null"
-                "ver_externa":
-                  "type": "string"
-                  "example": "null"
-                "operativo":
-                  "type": "boolean"
-                  "example": "True"
-                "fuera_de_uso":
-                  "type": "boolean"
-                  "example": "False"
-                "dado_de_baja":
-                  "type": "boolean"
-                  "example": "False"
-                "observaciones":
-                  "type": "string"
-                  "example": "null"
-                "estado":
-                  "type": "string"
-                  "example": "EN USO"
-                "elaborado":
-                  "type": "string"
-                  "example": "prueba"
-                "fecha_elab":
-                  "type": "date"
-                  "example": "2022-12-16"
-                "revisado":
-                  "type": "string"
-                  "example": "Erick"
-                "fecha_rev":
-                  "type": "date"
-                  "example": "2022-12-21"
-                "ul_fecha_ac":
-                  "type": "date"
-                  "example": "2022-12-19"
+                    "type": "string"
+                    "example": "B-03-07"
+                  "ver_interna":
+                    "type": "string"
+                    "example": "null"
+                  "ver_externa":
+                    "type": "string"
+                    "example": "null"
+                  "operativo":
+                    "type": "boolean"
+                    "example": true
+                  "fuera_de_uso":
+                    "type": "boolean"
+                    "example": false
+                  "dado_de_baja":
+                    "type": "boolean"
+                    "example": false
+                  "observaciones":
+                    "type": "string"
+                    "example": "null"
+                  "estado":
+                    "type": "string"
+                    "example": "EN USO"
+                  "elaborado":
+                    "type": "string"
+                    "example": "prueba"
+                  "fecha_elab":
+                    "type": "string"
+                    "format": "date"
+                    "example": "2022-12-16"
+                  "revisado":
+                    "type": "string"
+                    "example": "Erick"
+                  "fecha_rev":
+                    "type": "string"
+                    "format": "date"
+                    "example": "2022-12-21"
+                  "ul_fecha_ac":
+                    "type": "string"
+                    "format": "date"
+                    "example": "2022-12-19"
       "responses":
         "200":
           "description": "OK"
@@ -928,17 +979,47 @@
               "type": "object"
               "properties":
                 "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_verificacion":
+                 "type": "string"
+                  "example": "B-03-07"
+                "ver_interna":
                   "type": "string"
-                  "example": "2023-07-01"
-                "resultado":
+                  "example": "null"
+                "ver_externa":
                   "type": "string"
-                  "example": "Aprobado"
-                "area":
+                  "example": "null"
+                "operativo":
+                  "type": "boolean"
+                  "example": true
+                "fuera_de_uso":
+                  "type": "boolean"
+                  "example": false
+                "dado_de_baja":
+                  "type": "boolean"
+                  "example": false
+                "observaciones":
                   "type": "string"
-                  "example": "Área 21"
+                  "example": "null"
+                "estado":
+                  "type": "string"
+                  "example": "EN USO"
+                "elaborado":
+                  "type": "string"
+                  "example": "prueba"
+                "fecha_elab":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-16"
+                "revisado":
+                  "type": "string"
+                  "example": "Erick"
+                "fecha_rev":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-21"
+                "ul_fecha_ac":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-19"
       "responses":
         "200":
           "description": "OK"
