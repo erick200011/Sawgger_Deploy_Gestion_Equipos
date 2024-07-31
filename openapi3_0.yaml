@@ -895,45 +895,45 @@
                 "id_equipo":
                     "type": "string"
                     "example": "B-03-07"
-                  "ver_interna":
-                    "type": "string"
-                    "example": "null"
-                  "ver_externa":
-                    "type": "string"
-                    "example": "null"
-                  "operativo":
-                    "type": "boolean"
-                    "example": true
-                  "fuera_de_uso":
-                    "type": "boolean"
-                    "example": false
-                  "dado_de_baja":
-                    "type": "boolean"
-                    "example": false
-                  "observaciones":
-                    "type": "string"
-                    "example": "null"
-                  "estado":
-                    "type": "string"
-                    "example": "EN USO"
-                  "elaborado":
-                    "type": "string"
-                    "example": "prueba"
-                  "fecha_elab":
-                    "type": "string"
-                    "format": "date"
-                    "example": "2022-12-16"
-                  "revisado":
-                    "type": "string"
-                    "example": "Erick"
-                  "fecha_rev":
-                    "type": "string"
-                    "format": "date"
-                    "example": "2022-12-21"
-                  "ul_fecha_ac":
-                    "type": "string"
-                    "format": "date"
-                    "example": "2022-12-19"
+                "ver_interna":
+                  "type": "string"
+                  "example": "null"
+                "ver_externa":
+                  "type": "string"
+                  "example": "null"
+                "operativo":
+                  "type": "boolean"
+                  "example": true
+                "fuera_de_uso":
+                  "type": "boolean"
+                  "example": false
+                "dado_de_baja":
+                  "type": "boolean"
+                  "example": false
+                "observaciones":
+                  "type": "string"
+                  "example": "null"
+                "estado":
+                  "type": "string"
+                  "example": "EN USO"
+                "elaborado":
+                  "type": "string"
+                  "example": "prueba"
+                "fecha_elab":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-16"
+                "revisado":
+                  "type": "string"
+                  "example": "Erick"
+                "fecha_rev":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-21"
+                "ul_fecha_ac":
+                  "type": "string"
+                  "format": "date"
+                  "example": "2022-12-19"
       "responses":
         "200":
           "description": "OK"
