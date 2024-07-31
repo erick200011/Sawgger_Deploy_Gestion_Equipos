@@ -877,8 +877,7 @@
                   "type": "date"
                   "example": "2022-12-21"
                 "ul_fecha_ac":
-                  "type": "string"
-                  "format":"date"
+                  "type": "date"
                   "example": "2022-12-19"
       "responses":
         "200":
