@@ -980,7 +980,7 @@
               "properties":
                 "id_equipo":
                  "type": "string"
-                  "example": "B-03-07"
+                 "example": "B-03-07"
                 "ver_interna":
                   "type": "string"
                   "example": "null"
