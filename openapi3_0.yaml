@@ -468,12 +468,36 @@
             "schema":
               "type": "object"
               "properties":
-                "nombre":
+                "idcod":
                   "type": "string"
-                  "example": "Equipo 1"
+                  "example": "A-06-07"
                 "descripcion":
                   "type": "string"
                   "example": "Descripción del equipo"
+                "marca":
+                  "type": "string"
+                  "example": "marca del equipo"
+                "modelos":
+                  "type": "string"
+                  "example": "modelo del equipo"
+                "nserie":
+                  "type": "string"
+                  "example": "numero de serie del equipo"
+                "accesorios":
+                  "type": "string"
+                  "example": "accesorios del equipo"
+                "fabricante":
+                  "type": "string"
+                  "example": "fabricante del equipo"
+                "caracteristicas":
+                  "type": "string"
+                  "example": "caracteristicas del equipo"
+                "con_instalacion":
+                  "type": "string"
+                  "example": "como instalar el equipo"
+                "con_utilizacion":
+                  "type": "string"
+                  "example": "como utilizar el equipo"
                 "area":
                   "type": "string"
                   "example": "Área 21"
