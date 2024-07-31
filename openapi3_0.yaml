@@ -601,16 +601,20 @@
               "type": "object"
               "properties":
                 "ul_fecha_cal_in":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2023-07-01"
                 "prox_fecha_cal_in":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2023-07-01"
                 "ul_fecha_cal_ex":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2023-07-01"
                 "prox_fecha_cal_ex":
-                  "type": "date"
+                  "type": "string"
+                  "format": "date"
                   "example": "2023-07-01"
                 "idcod_calibracion":
                   "type": "string"
