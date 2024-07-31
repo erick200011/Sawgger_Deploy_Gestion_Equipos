@@ -600,18 +600,24 @@
             "schema":
               "type": "object"
               "properties":
-                "id_equipo":
-                  "type": "integer"
-                  "example": 1
-                "fecha_calibracion":
-                  "type": "string"
+                "ul_fecha_cal_in":
+                  "type": "date"
                   "example": "2023-07-01"
-                "resultado":
+                "prox_fecha_cal_in":
+                  "type": "date"
+                  "example": "2023-07-01"
+                "ul_fecha_cal_ex":
+                  "type": "date"
+                  "example": "2023-07-01"
+                "prox_fecha_cal_ex":
+                  "type": "date"
+                  "example": "2023-07-01"
+                "idcod_calibracion":
                   "type": "string"
-                  "example": "Aprobado"
-                "area":
+                  "example": "B-03-07"
+                "comentarios":
                   "type": "string"
-                  "example": "Área 21"
+                  "example": "este equipo tiene calibración pendiente"
       "responses":
         "200":
           "description": "OK"
