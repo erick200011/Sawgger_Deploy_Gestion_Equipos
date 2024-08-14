@@ -518,7 +518,7 @@
           "name": "id"
           "required": true
           "schema":
-            "type": "integer"
+            "type": "string"
           "example": 1
       "responses":
         "200":
@@ -536,7 +536,7 @@
           "name": "id"
           "required": true
           "schema":
-            "type": "integer"
+            "type": "string"
           "example": 1
       "requestBody":
         "required": true
